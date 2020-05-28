@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>juego</title>
+    <style>
+        body {
+            background-color: rgba(129, 213, 252, 0.589);
+            font-size: 1.2em;
+        }
+
+        h1 {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input,
+        input[type="submit"] {
+            padding: 5px;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JUEGO</h1>
+
+    <article>
+        <p><b>INTRODUCE LOS DATOS PARA ENTRAR EN EL JUEGO</b></p>
+        <div id="formulario">
+            <form action="controllers/AccesUserGetDb.php" method="POST">
+                <label>Nombre de usuario: </label><br><br>
+                <input type="text" name="user" /><br><br>
+                <label>Contraseña: </label><br><br>
+                <input type="password" name="password" /><br><br>
+                <label>Registrar nuevo usuario: </label><br><br>
+                <input type="checkbox" name="register" value="register" /><br><br>
+                <input type="submit" value="Enviar" id="enviar" /><br><br>
+            </form>
+        </div>
+    </article>
+
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/estilo_operaciones.css">
+    <title>juego de dividir 2</title>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <div>
+            <h1>Operaciones Matemáticas, división 2</h1>
+             <h4>Resuelve 2 operaciones y pasarás al siguiente nivel</h4>
+        </div>
+        <h2>Añade en el resultado de la división redondeando, sin decimales</h2>
+        <div id="info">
+            <ul>
+                <li>NIVEL <span id="nivel"> 5 </span></li>
+                <li>PUNTOS <span id="puntos">80</span></li>
+                <li>CREDITOS <span id="creditos">160</span></li>
+            </ul>
+        </div>
+
+
+        <div id="operacion">
+            <ul>
+                <li id="number1">40</li>
+                <li>/</li>
+                <li id="number2">20</li>
+                <li>=</li>
+            </ul>
+            <input type="text" value="" id="valorUsuario">
+            <button id="boton">siguiente</button>
+        </div>
+
+
+        <div id="formulario">
+            <h3>Pon el Usuario y contraseña para finalizar el juego y volver a empezar el juego</h3>
+           <form action="controller/finjuego.php" method="POST">
+                <div class="registro">
+                    <label>Nombre de usuario: </label>
+                    <input type="text" name="user" id="user">
+                    <label>Contraseña: </label>
+                    <input type="password" name="password">
+                </div>               
+
+                <input type="submit" value="COMPROVAR" id="enviar" /><br><br>
+            </form>
+        </div>
+    </div>
+
+    <script>
+       
+    </script>
+
+
+</body>
+
+</html>
