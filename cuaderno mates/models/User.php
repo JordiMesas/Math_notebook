@@ -9,7 +9,7 @@ class User {
     protected $level;
     protected $points;
 
-    public function __construct(int $id, string $name, int $level = 1, int $points = 0) {
+    public function __construct(int $id, string $name, int $level, int $points) {
         $this->id = $id;
         $this->name = $name;
         $this->level = $level;
@@ -56,6 +56,6 @@ class User {
             $this->points = 0;
         }
         return $this->points;
-    }
+    }    
 
 }

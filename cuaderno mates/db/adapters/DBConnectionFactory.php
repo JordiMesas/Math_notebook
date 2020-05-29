@@ -10,7 +10,7 @@ class DBConnectionFactory {
 
     public static function getConnection() {
         if (DBConnectionFactory::$connection == null) {
-            DBConnectionFactory::$connection = new MySQLAdapter("127.0.0.1", 3306, "userdaw1", "Dejan10!", "demophp");
+            DBConnectionFactory::$connection = new MySQLAdapter("127.0.0.1", 3306, "userdaw1", "Dejan10!", "cuaderno");
             if (strcmp(DBConnectionFactory::$connection->connect(), "done") != 0) {
                DBConnectionFactory::$connection = null; 
             }
@@ -18,7 +18,7 @@ class DBConnectionFactory {
         return DBConnectionFactory::$connection;
     }
     
-    public static function closeConnection() {
+    private static function closeConnection() {
         DBConnectionFactory::$connection->closeConnection();
         DBConnectionFactory::$connection = null; 
     }

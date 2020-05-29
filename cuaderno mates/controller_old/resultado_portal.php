@@ -30,8 +30,7 @@
         <p><b>INTRODUEIX LES DADES PER ENTRAR EN EL JOC</b></p>
         <div id="formulario">
         <?php 
-          echo'usuario o password no validos';                            
-          echo '<br><br> Llevas realizados ', filter_input(INPUT_COOKIE,'intentos'),'  intentos<br><br>';
+          echo'usuario no validos vuelve a intentarlo';      
           print "  <p><a href=\"../portal.html\">Volver a la página principal</a></p>\n";
     
          ?> 
