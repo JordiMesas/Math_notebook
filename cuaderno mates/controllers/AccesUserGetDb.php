@@ -10,20 +10,30 @@ $db = DBConnectionFactory::getConnection();
 $datauser = [];
 $ok = 0;
 $usuari = filter_input(INPUT_POST, 'user');
-$password = filter_input(INPUT_POST, 'passwd');
+$password = filter_input(INPUT_POST, 'password');
 $register = filter_input(INPUT_POST, 'register');
 
 if ($register) {
-    $query = "INSERT INTO control_users (name,password) VALUES ('" . $usuari . "','" . $password . "');";
+    $query = "INSERT INTO control_users (name,password,level,points) VALUES ('" . $usuari . "','" . $password . "','" . 1 . "','" . 0 . "');";
     $ok = $db->executeQuery($query);
 } else {
     $query = "SELECT id FROM control_users WHERE name = '" . $usuari . "' and password = '" . $password . "';";
     $db->executeQuery($query, $datauser);
     $ok = $datauser[0]['id'];
+    var_dump($datauser[0]['id']);
 }
 
 if ($ok) {
-    $query = "SELECT id, name, level, points FROM users WHERE name = '" . $usuari . "';";
-    $user = new User($datauser[0]['id'],$datauser[0]['name'],$datauser[0]['level'],$datauser[0]['points']);
-    $acces = new accesLevel($user,$db);    
+    
+    $query = "SELECT id, name, level, points FROM control_users WHERE name = '" . $usuari . "';";
+    $db->executeQuery($query, $datauser);
+
+    setcookie('userid', $datauser[0]['id'], 0, '/', 'localhost');
+    setcookie('username', $datauser[0]['name'], 0, '/', 'localhost');
+    setcookie('userlevel', $datauser[0]['level'], 0, '/', 'localhost');
+    setcookie('userpoints', $datauser[0]['points'], 0, '/', 'localhost');
+
+    $user = new User((int) filter_input(INPUT_COOKIE, 'userid'),filter_input(INPUT_COOKIE, 'username'),(int) filter_input(INPUT_COOKIE, 'userlevel'),(int) filter_input(INPUT_COOKIE, 'userpoints'));
+    $acces = new accesLevel($user,$db);
+    $acces->acces();    
 }

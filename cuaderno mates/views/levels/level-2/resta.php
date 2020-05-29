@@ -1,42 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../../public/css/estilo_operaciones.css">
-    <title>juego de sumar</title>   
-</head>
+<?php include("../../common/head.html") ?>
 
 <body>
 
     <div id="container">
 
         <div>
-            <h1>Operaciones Matemáticas, sumas</h1>
+            <h1>Operaciones Matemáticas, resta</h1>
             <h4>Resuelve 2 operaciones y pasarás al siguiente nivel</h4>
         </div>
 
         <div id="info">
             <ul>
-                <li>NIVEL <span id="nivel"> 1 </span></li>
-                <li>PUNTOS <span id="puntos">0</span></li>
-                <li>CREDITOS <span id="creditos">0</span></li>
+                <li>NIVEL <span id="nivel"> 2 </span></li>
+                <li>PUNTOS <span id="puntos">20</span></li>
+                <li>CREDITOS <span id="creditos">40</span></li>
             </ul>
         </div>
 
 
         <div id="operacion">
             <ul>
-                <li id="number1">2</li>
-                <li>+</li>
+                <li id="number1">4</li>
+                <li>-</li>
                 <li id="number2">2</li>
                 <li>=</li>
             </ul>
             <input type="text" value="" id="valorUsuario">
             <button id="boton">siguiente</button>
         </div>
+
 
         <div id="formulario">
 
@@ -45,7 +38,6 @@
             <p>(Se te va a guardar los puntos y creditos que has logrado)</p>
 
             <form action="controller/controller.php" method="POST">
-
                 <div class="registro">
                     <label>Nombre de usuario: </label>
                     <input type="text" name="user" id="user">
@@ -59,10 +51,11 @@
                     <input type="number" name="creditos">
                 </div>
 
-                <input type="submit" value="COMPROVAR" id="enviar">
+                <input type="submit" value="COMPROVAR" id="enviar" /><br><br>
             </form>
         </div>
     </div>
+
     <script>
         // puntos y creditos
         var puntos = document.getElementById("puntos");
@@ -86,12 +79,12 @@
                 console.log(numUsuario);
                 var verf1 = num1.innerHTML;
                 var verf2 = num2.innerHTML;
-                var result = parseInt(verf1) + parseInt(verf2);
+                var result = parseInt(verf1) - parseInt(verf2);
                 console.log(result);
                 if (parseInt(numUsuario) == result) {
                     puntos.innerHTML = parseInt(puntos.innerHTML) + 10;
                     creditos.innerHTML = parseInt(creditos.innerHTML) + 20;
-                    if (parseInt(puntos.innerHTML) === 20) {
+                    if (parseInt(puntos.innerHTML) === 40) {
                         alert("fin");
                         boton.style.display = "none";
                         document.getElementById("formulario").style.display = "block";
