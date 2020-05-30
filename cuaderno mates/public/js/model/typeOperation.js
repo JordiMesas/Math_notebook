@@ -8,20 +8,20 @@ class typeOperation{
     
     setOperation(){        
         switch(this.level) {
-            case "1":
+            case 1:               
+                return this.num1 + this.num2;
               
-              break;
-            case "2":
+            case 2:
+              return this.num1 - this.num2;
+             
+            case 3:
+                return this.num1 * this.num2;
+             
+            case 4:
+                return this.num1 / this.num2;
               
-              break;
-            case "3":
-              
-              break;
-            case "4":
-                
-              break;
             default:
-                
+              return false;              
                           
           }
     }

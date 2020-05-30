@@ -30,6 +30,7 @@
         </div>        
     </div>
 
+    <script src="../../../public/js/model/typeOperation.js"></script>    
     <script src="../../../public/js/model/setCookies.js"></script>
     <script src="../../../public/js/model/finalGameVar.js"></script>
     <script> let numberFinal = new finalGameVar(60);</script>           
