@@ -60,9 +60,7 @@
                     puntos.innerHTML = parseInt(puntos.innerHTML) + 10;
                     creditos.innerHTML = parseInt(creditos.innerHTML) + 20;
                     if (parseInt(puntos.innerHTML) === 20) {
-                        alert("fin");
-                        boton.style.display = "none";
-                        document.getElementById("formulario").style.display = "block";
+                        alert("fin");          
                         return false;
                     }
                     ponerNum();

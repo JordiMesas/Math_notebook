@@ -8,12 +8,14 @@ class User {
     protected $name;
     protected $level;
     protected $points;
+    protected $credits;
 
-    public function __construct(int $id, string $name, int $level, int $points) {
+    public function __construct(int $id, string $name, int $level, int $points, int $credits) {
         $this->id = $id;
         $this->name = $name;
         $this->level = $level;
         $this->points = $points;
+        $this->credits = $credits;
     }
 
     public function id(): int {
@@ -30,6 +32,10 @@ class User {
 
     public function points(): int {
         return $this->points;
+    }
+
+    public function credits(): int {
+        return $this->credits;
     }
 
     public function upLevel(int $increment): int {
