@@ -28,31 +28,7 @@
             <input type="text" value="" id="valorUsuario">
             <button id="boton">siguiente</button>
         </div>
-
-
-        <div id="formulario">
-
-            <h3>Pon el nombre y contraseña para registrar los puntos y los creditos que has logrado.</h3>
-            <p>A continuación rellena en el siguiente formulario los puntos y creditos que has conseguido</p>
-            <p>(Se te va a guardar los puntos y creditos que has logrado)</p>
-
-            <form action="controller/controller.php" method="POST">
-                <div class="registro">
-                    <label>Nombre de usuario: </label>
-                    <input type="text" name="user" id="user">
-                    <label>Contraseña: </label>
-                    <input type="password" name="password">
-                </div>
-                <div class="registro">
-                    <label for="">Puntos</label>
-                    <input type="number" name="puntos">
-                    <label for="">Creditos</label>
-                    <input type="number" name="creditos">
-                </div>
-
-                <input type="submit" value="COMPROVAR" id="enviar" /><br><br>
-            </form>
-        </div>
+       
     </div>
 
     <script>

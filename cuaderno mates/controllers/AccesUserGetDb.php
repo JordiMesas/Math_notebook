@@ -34,7 +34,7 @@ if ($ok) {
     setcookie('userpoints', $datauser[0]['points'], 0, '/', 'localhost');
     setcookie('usercredits', $datauser[0]['credits'], 0, '/', 'localhost');
 
-    $user = new User((int) filter_input(INPUT_COOKIE, 'userid'),(string)filter_input(INPUT_COOKIE, 'username'),(int) filter_input(INPUT_COOKIE, 'userlevel'),(int) filter_input(INPUT_COOKIE, 'userpoints'),(int) filter_input(INPUT_COOKIE, 'usercredits'));
+    $user = new User((int) $datauser[0]['id'],(string) $datauser[0]['name'],(int) $datauser[0]['level'],(int) $datauser[0]['points'],(int) $datauser[0]['credits']);
     $acces = new accesLevel($user,$db);
     $acces->acces();    
 }else{
