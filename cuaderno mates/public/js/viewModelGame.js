@@ -37,14 +37,15 @@ var verificar = () => {
                 alert("fin");
                 // sentencia para augmentar el nivel
                 let upLevel = new upCookiesLevel((parseInt(nivel.innerHTML)+1).toString());
-                upLevel. upCookieNivel();          
+                upLevel. upCookieNivel();
+                document.getElementById("operacion").style.display = "none";  
+                document.getElementById("formulario").style.display = "block";         
                 return false;
             }
             ponerNum();
         } else {
-            alert("no es correcto");
-            puntos.innerHTML = parseInt(puntos.innerHTML) - 10;
-            creditos.innerHTML = parseInt(creditos.innerHTML) - 20;
+            alert("no es correcto");            
+            creditos.innerHTML = parseInt(creditos.innerHTML) - 10;
         }
 
     };

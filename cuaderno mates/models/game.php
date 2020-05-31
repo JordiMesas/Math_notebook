@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
+include_once '../db/adapters/DBConnectionFactory.php';
 include_once '../db/controlDb.php';
 include_once '../models/User.php';
-include_once '../db/adapters/DBConnectionFactory.php';
+
 
 class gameController {
 
@@ -25,6 +28,10 @@ class gameController {
 
     public function updatedb(){
         $this->dbinformation->updateStatus();
+    }
+
+    public function accesNextGame(){
+        $this->dbinformation->acces();
     }
 }
   

@@ -70,8 +70,7 @@
                 ?>
 
                 <div id="formulario">             
-                    <form action = "" method="POST">
-                        <input type="number" name="result" placeholder="Escriu el resultat"/>
+                    <form action = "" method="POST">                        
                         <input type="submit" value="CHECK" id="check" name="enviar"/>
                     </form>
                 </div>

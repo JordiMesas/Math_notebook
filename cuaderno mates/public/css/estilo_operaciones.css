@@ -72,13 +72,15 @@ ul{
     padding: 0 5px;   
 }
 
-#formulario input{
-    padding: 5px;
-    font-size: 1em;
-}
-
 form{
     flex-direction: column;    
+}
+
+form input{
+    width: 160px;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 #enviar{

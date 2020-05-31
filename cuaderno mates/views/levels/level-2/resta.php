@@ -1,5 +1,6 @@
-
 <?php include("../../common/head.html") ?>
+    <title>juego de resta</title>   
+</head>
 
 <body>
 
@@ -13,8 +14,8 @@
         <div id="info">
             <ul>
                 <li>NIVEL <span id="nivel"> 2 </span></li>
-                <li>PUNTOS <span id="puntos">20</span></li>
-                <li>CREDITOS <span id="creditos">40</span></li>
+                <li>PUNTOS <span id="puntos"><?php print filter_input(INPUT_COOKIE, 'userpoints'); ?></span></li>
+                <li>CREDITOS <span id="creditos"><?php print filter_input(INPUT_COOKIE, 'usercredits'); ?></span></li>
             </ul>
         </div>
 
@@ -28,7 +29,13 @@
             </ul>
             <input type="text" value="" id="valorUsuario">
             <button id="boton">siguiente</button>
-        </div>       
+        </div> 
+        
+        <div id="formulario">             
+            <form action = "../../../controllers/gameControllerResta.php" method="POST">                                        
+                <input type="submit" value="Siguiente nivel" id="check" name="enviar"/>
+            </form>
+        </div>
     </div>
     <script src="../../../public/js/model/typeOperation.js"></script>    
     <script src="../../../public/js/model/setCookies.js"></script>

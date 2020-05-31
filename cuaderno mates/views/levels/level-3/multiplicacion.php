@@ -1,5 +1,6 @@
-
 <?php include("../../common/head.html") ?>
+    <title>juego de multiplicación</title>   
+</head>
 
 <body>
 
@@ -12,8 +13,8 @@
         <div id="info">
             <ul>
                 <li>NIVEL <span id="nivel"> 3 </span></li>
-                <li>PUNTOS <span id="puntos">40</span></li>
-                <li>CREDITOS <span id="creditos">80</span></li>
+                <li>PUNTOS <span id="puntos"><?php print filter_input(INPUT_COOKIE, 'userpoints'); ?></span></li>
+                <li>CREDITOS <span id="creditos"><?php print filter_input(INPUT_COOKIE, 'usercredits'); ?></span></li>
             </ul>
         </div>
 
@@ -27,7 +28,13 @@
             </ul>
             <input type="text" value="" id="valorUsuario">
             <button id="boton">siguiente</button>
-        </div>        
+        </div>
+        
+        <div id="formulario">             
+            <form action = "../../../controllers/gameControllerMultiplic.php" method="POST">                                        
+                <input type="submit" value="Siguiente nivel" id="check" name="enviar"/>
+            </form>
+        </div>
     </div>
 
     <script src="../../../public/js/model/typeOperation.js"></script>    
