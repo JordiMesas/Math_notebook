@@ -1,6 +1,6 @@
 <?php
 
-include_once '../models/game.php';
+include_once 'game.php';
 
 if(filter_input(INPUT_COOKIE, 'userpoints') === "40"){
     $gameControl = gameController::getController(); 
