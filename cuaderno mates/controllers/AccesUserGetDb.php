@@ -4,7 +4,7 @@ declare(strict_types=1);
                                                      
 include_once '../db/adapters/DBConnectionFactory.php';
 include_once '../models/User.php';
-include_once '../db/accesLevel.php';
+include_once '../db/controlDb.php';
 
 $db = DBConnectionFactory::getConnection();
 $datauser = [];
@@ -35,7 +35,7 @@ if ($ok) {
     setcookie('usercredits', $datauser[0]['credits'], 0, '/', 'localhost');
 
     $user = new User((int) $datauser[0]['id'],(string) $datauser[0]['name'],(int) $datauser[0]['level'],(int) $datauser[0]['points'],(int) $datauser[0]['credits']);
-    $acces = new accesLevel($user,$db);
+    $acces = new controlDb($user,$db);
     $acces->acces();    
 }else{
     header('location: ../views/badLogin/badIndex.php');

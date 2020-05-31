@@ -38,30 +38,4 @@ class User {
         return $this->credits;
     }
 
-    public function upLevel(int $increment): int {
-        $this->level += $increment;
-        return $this->level;
-    }
-
-    public function downLevel(int $decrement): int {
-        $this->level -= $decrement;
-        if ($this->level < 1) {
-            $this->level = 1;
-        }
-        return $this->level;
-    }
-
-    public function upPoints(int $increment): int {
-        $this->points += $increment;
-        return $this->points;
-    }
-
-    public function downPoints(int $decrement): int {
-        $this->points -= $decrement;
-        if ($this->points < 0) {
-            $this->points = 0;
-        }
-        return $this->points;
-    }    
-
 }

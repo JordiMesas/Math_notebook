@@ -4,7 +4,7 @@ declare(strict_types=1);
 include_once 'adapters/MySQLAdapter.php';
 include_once '../models/User.php';
 
-class accesLevel {
+class controlDb {
     
     protected $user;
     protected $db;   
@@ -35,5 +35,10 @@ class accesLevel {
             header('location: ../views/levels/level-1/suma.php');
         }
     }
+
+    public function updateStatus():bool {       
+        $query = "UPDATE control_users SET level = ".$this->user->level().", points = ".$this->user->points().", credits = ".$this->user->credits()." WHERE id = ".$this->user->id();
+        return $this->db->executeQuery($query);
+    }  
 
 }
