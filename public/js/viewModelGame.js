@@ -45,7 +45,7 @@ var verificar = () => {
             ponerNum();
         } else {
             alert("no es correcto");            
-            creditos.innerHTML = parseInt(creditos.innerHTML) - 10;
+            creditos.innerHTML = parseInt(creditos.innerHTML) - 20;
         }
 
     };

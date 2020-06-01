@@ -38,7 +38,7 @@
     <div>
         <h1>¡HAS GANADO!</h1>
         <div><img src="../../../public/img/copa.jpg" alt="copa"></div>
-        <h2>La nota que has sacado esta a continuación:</h2>           
+        <h2>La nota que has sacado está a continuación:</h2>           
     </div>
 
     <div>
