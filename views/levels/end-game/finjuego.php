@@ -49,11 +49,12 @@
             $totalCredits= 400;
             $maxNote = 10; 
             $actualityNote = ($creditsActuality * $maxNote)/ $totalCredits;
-            if($creditsActuality <= $totalCredits/2){
+            if($creditsActuality >= $totalCredits/2){
                 print "<p>Has sacado un $actualityNote del total de intentos,</p>";
-                print "<p>Suspendido</p>";
+                
             }else{
                 print "<p>Has sacado un $actualityNote de la nota final.</p>";
+                print "<p>Suspendido</p>";
             }            
              
         ?>
