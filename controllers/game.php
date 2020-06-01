@@ -10,16 +10,19 @@ include_once '../models/User.php';
 class gameController {
 
     protected $dbinformation;
-    
+    protected $level;
+    protected $points;
+    protected  $credits;
+
     private function __construct() {
                       
         $id = (int) filter_input(INPUT_COOKIE, 'userid');
         $username = filter_input(INPUT_COOKIE, 'username');
-        $level = (int) filter_input(INPUT_COOKIE, 'userlevel');
-        $points = (int) filter_input(INPUT_COOKIE, 'userpoints');       
-        $credits = (int) filter_input(INPUT_COOKIE, 'usercredits');
+        $this->level = (int) filter_input(INPUT_COOKIE, 'userlevel');
+        $this->points = (int) filter_input(INPUT_COOKIE, 'userpoints');       
+        $this->credits = (int) filter_input(INPUT_COOKIE, 'usercredits');
 
-        $this->dbinformation = new controlDb(new User($id,$username,$level,$points,$credits), DBConnectionFactory::getConnection());
+        $this->dbinformation = new controlDb(new User($id,$username,$this->level, $this->points, $this->credits), DBConnectionFactory::getConnection());
     }
 
     public static function getController() {
@@ -32,7 +35,8 @@ class gameController {
 
     public function accesNextGame(){
         $this->dbinformation->acces();
-    }
+    }  
+   
 }
   
 

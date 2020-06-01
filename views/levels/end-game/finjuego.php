@@ -9,18 +9,24 @@
     <style>
         #containerf{
             display: flex;            
-            flex-direction: column;            
+            flex-direction: column;                  
             align-items: center;            
         }    
         img{
-            border-radius: 100px;
-            margin: 5px;                                         
+            width: 50%;
+            border-radius: 100px;                                                  
         }
         
         p{            
             font-weight: bold;
             font-size: 20px; 
             color: red;
+        }
+
+        a{
+            text-decoration: none;            
+            font-size: 1.5em;
+            font-weight: bold;            
         }
                    
     </style>
@@ -52,9 +58,21 @@
              
         ?>
 
-    </div>      
+        <a href="../level-1/suma.php" id="button">volver a empezar</a>
+
+        <?php 
+
+            setcookie('userlevel', 1, 0, '/', 'localhost');
+            setcookie('userpoints',0, 0, '/', 'localhost');
+            setcookie('usercredits', 0, 0, '/', 'localhost');
+        
+        ?>
+
+    </div>  
     
   </div>
+
+  
 
 </body>
 
