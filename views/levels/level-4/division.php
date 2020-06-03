@@ -29,7 +29,7 @@
                 <li>=</li>
             </ul>
             <input type="text" value="" id="valorUsuario">
-            <button id="boton">siguiente</button>
+            <button id="boton">comprobar</button>
         </div>        
 
         <div id="formulario">             
