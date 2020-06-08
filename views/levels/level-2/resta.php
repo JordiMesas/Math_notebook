@@ -8,7 +8,7 @@
 
         <div>
             <h1>RESTA</h1>
-            <h4>Resuelve 2 operaciones y pasarás al siguiente nivel</h4>
+            <h4>Resuelve 5 operaciones y pasarás al siguiente nivel</h4>
             <p>Cuando llegues a 100 puntos acumulados pasarás de nivel</p>
         </div>
 
@@ -27,9 +27,10 @@
                 <li>-</li>
                 <li id="number2">2</li>
                 <li>=</li>
-            </ul>
-            <input type="text" value="" id="valorUsuario">
-            <button id="boton">comprobar</button>
+            </ul>            
+
+            <?php include("../../common/divOperacion.html") ?> 
+            
         </div> 
         
         <div id="formulario">             
@@ -44,11 +45,9 @@
       
     </div>
 
-    <script src="../../../public/js/model/typeOperation.js"></script>    
-    <script src="../../../public/js/model/setCookies.js"></script>
-    <script src="../../../public/js/model/finalGameVar.js"></script>
+    <?php include("../../common/scriptsModel.html") ?>   
     <script> let numberFinal = new finalGameVar(100);</script>           
-    <script src="../../../public/js/viewModelGame.js"></script>
+    <?php include("../../common/scriptViewModelGame.html") ?>
 
 
 </body>

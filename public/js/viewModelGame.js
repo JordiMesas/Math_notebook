@@ -16,15 +16,16 @@ var ponerNum = () => {
 }
 // verificar error y augmento de puntos y nivel con cookies
 var boton = document.getElementById("boton");
+ 
+var verificar = () => {   
 
-var verificar = () => {
+    if (boton) { 
 
-    var numUsuario = document.getElementById("valorUsuario").value;
-
-    if (boton) {        
+       var numUsuario = document.getElementById("valorUsuario").value;
+       var right = document.querySelector("#container div:nth-of-type(3) img:nth-of-type(1)");
+       var incorrect = document.querySelector("#container div:nth-of-type(3) img:nth-of-type(2)");
        
         // sentencia para saber que operación vamos a realizar
-
         let operation = new typeOperation(parseInt(nivel.innerHTML),parseInt(num1.innerHTML),parseInt(num2.innerHTML));                       
         
         if (parseInt(numUsuario) === (Math.round(operation.setOperation()))) {          
@@ -41,21 +42,24 @@ var verificar = () => {
             if (parseInt(puntos.innerHTML) === numberFinal.gameVar()) {
                 alert("fin");
                 
-                // sentencia para augmentar el nivel
+                // sentencia para augmentar el nivel de tipo cookie
                 let upLevel = new upCookiesLevel((parseInt(nivel.innerHTML)+1).toString());
                 upLevel. upCookieNivel();
                 document.getElementById("operacion").style.display = "none";  
                 document.getElementById("formulario").style.display = "block";         
                 return false;
             }
-            ponerNum();
+            ponerNum();      
+            incorrect.style.display = "none";                   
+            right.style.display= "block";
+        } else {  
             
-        } else {
-            alert("no es correcto");            
+            right.style.display = "none";
+            incorrect.style.display = "block";            
             creditos.innerHTML = parseInt(creditos.innerHTML) - 20;
         }
         // despues de verificar el resultado hago que el input se limpie       
-        numUsuario = "";
+        document.getElementById("valorUsuario").value = "";
 
     };
 

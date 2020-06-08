@@ -20,13 +20,18 @@ body{
     flex-direction: column;    
 }
 
-#container > div, h3, h4, form{
-    padding: 20px 0;
+#container > div, p, h4, form{
+    padding: 10px;
 }
 
 h1{
-    padding-top: 20px;    
+    padding: 20 px;    
     align-self: flex-start;
+    font-size: 1.5em;
+}
+
+ul{
+    list-style-type: none;
 }
 
 #info ul{    
@@ -35,30 +40,19 @@ h1{
     font-weight: bold;        
 }
 
-#operacion, #operacion ul {    
+#operacion{
+    height: 70vw;
+    flex-direction: column;
+    align-items: center;    
+}
+
+#operacion, #operacion ul {      
     justify-content: space-evenly;           
 }
 
-#operacion ul li{
+#operacion ul li, #info ul li{
     padding-right: 10px;
     font-weight: bold;
-}
-
-ul{
-    list-style-type: none;
-}
-
-.registro{
-    padding: 10px;    
-    flex-direction: column;
-}
-
-.registro input{
-    width: 250px;
-}
-
-.registro input, .registro label{
-    padding: 10px;
 }
 
 #valorUsuario, #formulario input[type="number"]{
@@ -67,9 +61,20 @@ ul{
     font-size: 1em;
 }
 
+#valorUsuario:focus{
+    outline: none;
+    border: 2px solid rgb(102, 205, 171);
+}
+
 #boton{
-    font-size: 1.05em;
-    padding: 0 5px;   
+    font-size: 1.3em;
+    padding: 3px 8px;
+    font-weight: bold;   
+}
+
+#boton:hover{
+    background-color: yellow;
+    
 }
 
 form{
@@ -83,11 +88,6 @@ form input{
     font-weight: bold;
 }
 
-#enviar{
-    width: 150px;
-    padding: 5px;
-}
-
 input, button{
     border-radius: 5px;
     cursor: pointer;
@@ -98,15 +98,31 @@ input, button{
 }
 
 img{
-    border-radius: 10px;                                  
-}   
+    max-width: 100%;      
+    border-radius: 10px;                                        
+}
 
-@media (min-width: 1075px) { 
-    .registro{        
-        flex-direction: row;
+
+#container div:nth-of-type(3) img{
+    width: 30px;
+    margin: 3px;
+    display: none;
+    
+}
+
+@media (min-width: 400px) { 
+    #operacion{
+        height: inherit;
+        flex-direction: row;          
     }
 
- }
+    #container > div, p, h4, form{
+        padding: 20px 10px;
+    }
+
+}
+
+
 
 
 
