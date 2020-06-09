@@ -9,11 +9,11 @@ class setCookies{
 
     }
 
-    setCookiePuntos(){
+    setCookiePoints(){
         document.cookie = `userpoints=${this.puntos}; path=/`;
     }
 
-    setCookieCreditos(){
+    setCookieCredits(){
         document.cookie = `usercredits=${this.creditos}; path=/`;
     }
    
@@ -26,7 +26,7 @@ class upCookiesLevel{
         this.nivel = nivel;
     }    
     
-    upCookieNivel(){        
+    upCookieLevel(){        
         document.cookie = `userlevel= ${this.nivel}; path=/`;
     }
 
