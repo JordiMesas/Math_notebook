@@ -40,7 +40,7 @@
         </div>
 
         <div>
-            <img src="../../../public/img/niño.jpg" alt="niño">
+            <img src="../../../public/img/boy.jpg" alt="niño">
         </div>
       
     </div>

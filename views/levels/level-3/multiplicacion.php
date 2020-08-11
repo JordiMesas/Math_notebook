@@ -39,7 +39,7 @@
         </div>
 
         <div>
-            <img src="../../../public/img/mates.jpg" alt="mates">
+            <img src="../../../public/img/math.jpg" alt="mates">
         </div>
     </div>
 

@@ -40,7 +40,7 @@
         </div>
 
         <div>
-            <img src="../../../public/img/gatos.jpg" alt="gatos">
+            <img src="../../../public/img/cats.jpg" alt="gatos">
         </div>
        
     </div>
